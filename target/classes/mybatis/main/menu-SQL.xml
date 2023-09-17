@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.edu.menu.dao.MenuDAO">
+
+    <insert id="menuInsert" parameterType="java.util.HashMap">
+        INSERT INTO cafe_menu (product_name, selectedImage, iceOrHot, product_price, image_name)
+        VALUES (#{product_name}, #{selectedImage}, #{iceOrHot}, #{product_price}, #{image_name})
+    </insert>
+
+    <select id="menuSelectList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+        SELECT * FROM cafe_menu
+    </select>
+
+    <delete id="menuDelete" parameterType="int">
+        DELETE FROM cafe_menu WHERE menu_id = #{menu_id}
+    </delete>
+</mapper>
